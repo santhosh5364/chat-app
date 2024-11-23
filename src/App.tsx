@@ -1,24 +1,11 @@
-import { useState } from "react";
-import Login from "./components/Login";
-import Chat from "./components/Chat";
-import { SocketProvider } from "./context/SocketProvider";
+import React from "react";
+import ChatWrapper from "./app/ChatWrapper";
+import { SocketProvider } from "./app/context/SocketContext";
 
-const App = () => {
-  const [username, setUsername] = useState<string | null>(null);
-
-  const handleLogin = (username: string) => {
-    setUsername(username);
-  };
-
-  return (
-    <SocketProvider>
-      {username ? (
-        <Chat username={username} />
-      ) : (
-        <Login onLogin={handleLogin} />
-      )}
-    </SocketProvider>
-  );
-};
+const App: React.FC = () => (
+  <SocketProvider>
+    <ChatWrapper />
+  </SocketProvider>
+);
 
 export default App;
