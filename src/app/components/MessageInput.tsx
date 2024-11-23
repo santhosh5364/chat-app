@@ -14,7 +14,7 @@ const MessageInput: React.FC<MessageInputProps> = () => {
 
   const handleSend = () => {
     if (messageText.trim()) {
-      socket?.emit("message", messageText);
+      socket?.emit("message", { text: messageText, userId: getUserId() });
       setMessageText("");
     }
   };
