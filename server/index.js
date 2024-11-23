@@ -40,7 +40,7 @@ io.on("connection", (socket) => {
     console.log("Message from client: ", msg);
 
     // Save the message on the server
-    messages.push({ text: msg, userId: socket.id });
+    messages.push(msg);
 
     // Broadcast the new message to all connected clients
     io.emit("message", msg);
