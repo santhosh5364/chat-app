@@ -1,0 +1,1 @@
+docker image build --pull --file "D:\Sandoz\chat-room/chat-app/server/Dockerfile" --tag "chat:server" --label "version=1.0" "D:\Sandoz\chat-room/chat-app/server" 
