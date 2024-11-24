@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  server:
+    image: server
+    build:
+      context: chat-app/server
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 9090:9090
